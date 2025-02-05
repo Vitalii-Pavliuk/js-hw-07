@@ -3,16 +3,16 @@ import { galleryItems } from './gallery-items.js';
 const galleryDiv = document.querySelector(".gallery");
 
 const galleryRow = galleryItems.map(({ preview, original, description }) => {
-    return `<div class="gallery__item">
-      <a class="gallery__link" href="${original}">
-        <img
-          class="gallery__image"
-          src="${preview}"
-          data-source="${original}"
-          alt="${description}"
-        />
-      </a>
-    </div>`;
+    return `<li class="gallery__item">
+   <a class="gallery__link" href="${original}">
+   <img
+     class="gallery__image"
+     src="${preview}"
+     data-source="${original}"
+     alt="${description}"
+    />
+    </a>
+    </li>`;
 }).join("");
 
 galleryDiv.innerHTML = galleryRow;
@@ -33,7 +33,6 @@ function onOpenModal(event) {
     `);
   
     instance.show();
-    
     document.addEventListener('keydown', onEscPress);
 }
 
